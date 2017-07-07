@@ -2,14 +2,67 @@
   "name": "js-stack-from-scratch",
   "version": "2.4.5",
   "description": "JavaScript Stack from Scratch - Step-by-step tutorial to build a modern JavaScript stack",
+  "browserslist": [
+    "> 1%"
+  ],
   "scripts": {
-    "test": "node mdlint.js"
+    "test": "eslint src && jest --coverage",
+    "start": "yarn dev:start",
+    "prod:build": "rimraf lib && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
+    "prod:start": "cross-env NODE_ENV=production pm2 start lib/server && pm2 logs",
+    "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
+    "dev:wds": "webpack-dev-server --progress",
+    "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
+    "prod:stop": "pm2 delete server",
+    "prepush": "yarn test && yarn prod:build",
+    "precommit": "yarn test"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.0.1",
+    "eslint": "^4.1.1",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-compat": "^1.0.4",
+    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "fetch-mock": "^5.12.1",
     "glob": "^7.1.1",
-    "markdownlint": "^0.4.0"
+    "husky": "^0.14.3",
+    "jest": "^20.0.4",
+    "markdownlint": "^0.4.0",
+    "nodemon": "^1.11.0",
+    "pm2": "^2.5.0",
+    "redux-mock-store": "^1.2.3",
+    "rimraf": "^2.6.1",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0"
   },
   "repository": "verekia/js-stack-from-scratch",
   "author": "Jonathan Verrecchia - @verekia",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-es2015-parameters": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "compression": "^1.6.2",
+    "express": "^4.15.3",
+    "immutable": "4.0.0-rc.2",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-hot-loader": "next",
+    "react-redux": "^5.0.5",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.7.1",
+    "redux-actions": "^2.2.1",
+    "redux-thunk": "^2.2.0"
+  }
 }
