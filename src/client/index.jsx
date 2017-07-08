@@ -13,10 +13,10 @@ import helloReducer from '../shared/reducer/hello'
 import { APP_CONTAINER_SELECTOR } from '../shared/config'
 import { isProd } from '../shared/util'
 
-/* eslint-disable-next-line no-underscore-dangle */
+// eslint-disable-next-line no-underscore-dangle
 const composeEnhancers = (isProd ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
+// eslint-disable-next-line no-underscore-dangle
 const preloadedState = window.__PRELOADED_STATE__
-/* eslint-disable-next-line no-underscore-dangle */
 
 const store = createStore(combineReducers(
   { hello: helloReducer }),

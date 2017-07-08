@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { Provider } from 'react-redux'
 import { StaticRouter } from 'react-router'
+import Helmet from 'react-helmet'
 
 import initStore from './init-store'
 import App from './../shared/app'
@@ -16,11 +17,14 @@ const renderApp = (location, plainPartialState, routerContext = {}) => {
         <App />
       </StaticRouter>
     </Provider>)
+  const head = Helmet.rewind()
+
   return (
     `<!doctype html>
   <html>
     <head>
-      <title>FIX ME</title>
+      ${head.title}
+      ${head.meta}
       <link rel="stylesheet" href="${STATIC_PATH}/css/style.css">
     </head>
     <body>
@@ -31,8 +35,7 @@ const renderApp = (location, plainPartialState, routerContext = {}) => {
       <script src="${isProd ? STATIC_PATH : `http://localhost:${WDS_PORT}/dist`}/js/bundle.js"></script>
     </body>
   </html>
-  `
-  )
+  `)
 }
 
 export default renderApp

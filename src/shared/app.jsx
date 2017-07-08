@@ -1,3 +1,4 @@
+import Helmet from 'react-helmet'
 import React from 'react'
 import { Switch } from 'react-router'
 import { Route } from 'react-router-dom'
@@ -19,6 +20,7 @@ import {
 
 const App = () =>
   (<div>
+    <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
     <h1>Hello React Component NATE!</h1>
     <h1>{APP_NAME}</h1>
     <HelloAsyncButton />

@@ -7,8 +7,11 @@ const initStore = (plainPartialState) => {
   const preloadedState = plainPartialState ? {} : undefined
 
   if (plainPartialState && plainPartialState.hello) {
-    preloadedState.hello = helloReducer(undefined, {})
-      .merge(plainPartialState.hello)
+    preloadedState.hello = Object.assign(
+      {},
+      helloReducer(undefined, {}),
+      plainPartialState.hello,
+    )
   }
 
   return createStore(combineReducers({ hello: helloReducer }),
