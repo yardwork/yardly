@@ -6,7 +6,7 @@ const Message = props =>
     <p>{props.message}</p>
   </div>)
 
-Message.propTypes = {
+Message.PropTypes = {
   message: PropTypes.string.isRequired,
 }
 

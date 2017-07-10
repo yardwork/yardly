@@ -28,6 +28,8 @@ export default (app) => {
   })
 
   app.get(helloEndpointRoute(), (req, res) => {
+    // eslint-disable-next-line no-console
+    console.log('req', req.params)
     res.json(helloEndpoint(req.params.num))
   })
 
