@@ -6,16 +6,14 @@
     "> 1%"
   ],
   "scripts": {
-    "test": "eslint src && jest --coverage",
+    "test": "eslint src && jest",
     "start": "yarn dev:start",
     "prod:build": "rimraf lib && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
     "prod:start": "cross-env NODE_ENV=production pm2 start lib/server && pm2 logs",
     "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
     "dev:wds": "webpack-dev-server --progress",
     "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
-    "prod:stop": "pm2 delete server",
-    "prepush": "yarn test && yarn prod:build",
-    "precommit": "yarn test"
+    "prod:stop": "pm2 delete server"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
