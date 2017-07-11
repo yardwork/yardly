@@ -1,6 +1,9 @@
+import Promise from 'bluebird'
+
 import mongoose from 'mongoose'
 import MONGO_DEV_URI from '../../shared/config'
 
+mongoose.Promise = Promise
 mongoose.connect(MONGO_DEV_URI)
 
 const db = mongoose.connection
