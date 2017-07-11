@@ -15,7 +15,6 @@ export function insertOne(username, password, cb) {
     User.create({ username, password: hashedPassword }, cb)
   })
 }
-insertOne('asdf', 'asdf', () => {})
 // add address
 export function addAddress(username, address) {
   findOne(username, (error, user) => {
