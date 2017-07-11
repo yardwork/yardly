@@ -18,6 +18,7 @@ const HelloAsyncPage = () =>
     <h1>{title}</h1>
     <MessageAsync />
     <HelloAsyncButton />
+    <h1>Hi from HelloAsync Page</h1>
   </div>)
 
 export default HelloAsyncPage
