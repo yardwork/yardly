@@ -5,3 +5,5 @@ coverage
 .github
 dist
 /lib/
+coverage
+dist
