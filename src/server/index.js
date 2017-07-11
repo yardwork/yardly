@@ -7,6 +7,7 @@ import workersRoute from './routes/workers'
 import routing from './routing'
 import { WEB_PORT, STATIC_PATH } from '../shared/config'
 import { isProd } from '../shared/util'
+// import db from './db/config'
 
 const app = express()
 
