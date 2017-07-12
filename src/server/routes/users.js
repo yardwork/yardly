@@ -1,4 +1,5 @@
 import express from 'express'
+import bcrypt from 'bcrypt-as-promised'
 
 import User from '../db/models/user'
 
@@ -9,11 +10,16 @@ import {
   USERS_DELETE,
 } from '../../shared/routes'
 
+/* export const USERS_INDEX = '/users'
+export const USERS_SHOW = '/users/:id'
+export const USERS_CREATE = '/users'
+export const USERS_UPDATE = '/users/:id'
+export const USERS_DELETE = '/users/:id'*/
+
 const router = express.Router()
 
 router.get(USERS_SHOW, (req, res, next) => {
   const { id } = req.params
-
 
   User
     .findById(id)
@@ -37,13 +43,17 @@ router.get(USERS_INDEX, (req, res, next) => {
 })
 
 router.post(USERS_CREATE, (req, res, next) => {
-  const user = new User(req.body)
-  user
-    .save()
-    .then((newUser) => {
-      res.status(201).json(newUser)
+  const password = req.body.password
+  bcrypt.hash(password)
+    .then((hashedPassword) => {
+      const user = new User({ username: req.body.username, password: hashedPassword })
+      user
+        .save()
+        .then((newUser) => {
+          res.status(201).json(newUser)
+        })
+        .catch(next)
     })
-    .catch(next)
 })
 
 router.delete(USERS_DELETE, (req, res, next) => {

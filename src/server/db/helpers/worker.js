@@ -15,9 +15,3 @@ export function insertOne(username, password, services, area, cb) {
     Worker.create({ username, password: hashedPassword, services, area }, cb)
   })
 }
-
-// add/edit/remove services
-// add/edit/remove equipment
-// add/edit availability
-// add/edit area
-// add/edit contactInfo
