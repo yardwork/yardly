@@ -13,7 +13,8 @@
     "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
     "dev:wds": "webpack-dev-server --progress",
     "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
-    "prod:stop": "pm2 delete server"
+    "prod:stop": "pm2 delete server",
+    "seed-database": "babel-node seed.js"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
