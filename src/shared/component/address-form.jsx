@@ -1,13 +1,18 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
 import PropTypes from 'prop-types'
+import { load as loadAccount } from '../reducer/address'
 
-const AddressForm = (props) => {
+let AddressForm = (props) => {
   const { handleSubmit, pristine, reset, submitting } = props
+  // handleSubmit = (values) {
+  //   console.log(values)
+  // }
   return (
     <div>
       <h1>Enter your Address Here</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit((values) => { console.log(values) })}>
         <div>
           <div>
             <Field
@@ -66,6 +71,13 @@ AddressForm.propTypes = {
   // reset: PropTypes.Function.isRequired,
 }
 
-export default reduxForm({
-  form: 'simple', // a unique identifier for this form
+AddressForm = reduxForm({
+  form: 'addressForm', // a unique identifier for this form
 })(AddressForm)
+
+AddressForm = connect(
+  state => ({
+    initialValues: state.account.data,
+  }), null)(AddressForm)
+
+export default AddressForm

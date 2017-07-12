@@ -11,6 +11,7 @@ import { reducer as formReducer } from 'redux-form'
 
 import App from '../shared/app'
 import helloReducer from '../shared/reducer/hello'
+import addressReducer from '../shared/reducer/address'
 import { APP_CONTAINER_SELECTOR } from '../shared/config'
 import { isProd } from '../shared/util'
 
@@ -22,6 +23,7 @@ const preloadedState = window.__PRELOADED_STATE__
 const store = createStore(combineReducers(
   { hello: helloReducer,
     form: formReducer,
+    address: addressReducer,
   }),
 { hello: preloadedState.hello,
   // form: formReducer,
