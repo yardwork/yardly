@@ -2,7 +2,7 @@ const workerSeedData = [
   {
     username: 'rsherel0',
     password: 'smBFkq',
-    services: { $oid: '59654f5afc13ae4df4000014' },
+    services: { oid: '59654f5afc13ae4df4000014' },
     area: 'Gafanha da Encarnação',
     firstName: 'Raquel',
     lastName: 'Sherel',
@@ -10,7 +10,7 @@ const workerSeedData = [
   {
     username: 'jlighten1',
     password: 'u1eAzHJmfz',
-    services: { $oid: '59654f5afc13ae4df4000015' },
+    services: { oid: '59654f5afc13ae4df4000015' },
     area: 'Qingguang',
     firstName: 'Junina',
     lastName: 'Lighten',
@@ -18,7 +18,7 @@ const workerSeedData = [
   {
     username: 'smelmar2',
     password: 'qQrrSX',
-    services: { $oid: '59654f5afc13ae4df4000016' },
+    services: { oid: '59654f5afc13ae4df4000016' },
     area: 'Mishkino',
     firstName: 'Staffard',
     lastName: 'Melmar',
@@ -26,7 +26,7 @@ const workerSeedData = [
   {
     username: 'pbadder3',
     password: 'siw1P9bwnpti',
-    services: { $oid: '59654f5afc13ae4df4000017' },
+    services: { oid: '59654f5afc13ae4df4000017' },
     area: 'Gampang',
     firstName: 'Pearle',
     lastName: 'Badder',
@@ -34,7 +34,7 @@ const workerSeedData = [
   {
     username: 'acorrie4',
     password: 'jzhGc1yQ',
-    services: { $oid: '59654f5afc13ae4df4000018' },
+    services: { oid: '59654f5afc13ae4df4000018' },
     area: 'Zākhū',
     firstName: 'Alverta',
     lastName: 'Corrie',
@@ -42,7 +42,7 @@ const workerSeedData = [
   {
     username: 'lrobinet5',
     password: 'sdCakVlAcxb',
-    services: { $oid: '59654f5afc13ae4df4000019' },
+    services: { oid: '59654f5afc13ae4df4000019' },
     area: 'Fengcheng',
     firstName: 'Laurie',
     lastName: 'Robinet',
@@ -50,7 +50,7 @@ const workerSeedData = [
   {
     username: 'btowsie6',
     password: 'cO0a5Cum6rTo',
-    services: { $oid: '59654f5afc13ae4df400001a' },
+    services: { oid: '59654f5afc13ae4df400001a' },
     area: 'El Cacao',
     firstName: 'Bertha',
     lastName: 'Towsie',
@@ -58,7 +58,7 @@ const workerSeedData = [
   {
     username: 'pfiddler7',
     password: '3Vj7RB',
-    services: { $oid: '59654f5afc13ae4df400001b' },
+    services: { oid: '59654f5afc13ae4df400001b' },
     area: 'Baozhu',
     firstName: 'Pepillo',
     lastName: 'Fiddler',
@@ -66,7 +66,7 @@ const workerSeedData = [
   {
     username: 'tedginton8',
     password: 'bDXdVDPuKU',
-    services: { $oid: '59654f5afc13ae4df400001c' },
+    services: { oid: '59654f5afc13ae4df400001c' },
     area: 'Pil’na',
     firstName: 'Tammy',
     lastName: 'Edginton',
@@ -74,7 +74,7 @@ const workerSeedData = [
   {
     username: 'paspling9',
     password: 't1vxafs',
-    services: { $oid: '59654f5afc13ae4df400001d' },
+    services: { oid: '59654f5afc13ae4df400001d' },
     area: 'Luxi',
     firstName: 'Patin',
     lastName: 'Aspling',
@@ -82,7 +82,7 @@ const workerSeedData = [
   {
     username: 'mcraydena',
     password: 'exmmWF9yG49',
-    services: { $oid: '59654f5afc13ae4df400001e' },
+    services: { oid: '59654f5afc13ae4df400001e' },
     area: 'Kyzyl-Kyya',
     firstName: 'Merrilee',
     lastName: 'Crayden',
@@ -90,7 +90,7 @@ const workerSeedData = [
   {
     username: 'ckiddyb',
     password: 'TVl61N4Mv',
-    services: { $oid: '59654f5afc13ae4df400001f' },
+    services: { oid: '59654f5afc13ae4df400001f' },
     area: 'Staropyshminsk',
     firstName: 'Cyrill',
     lastName: 'Kiddy',
@@ -98,7 +98,7 @@ const workerSeedData = [
   {
     username: 'sgoodluckc',
     password: 'xc2RYLZ',
-    services: { $oid: '59654f5afc13ae4df4000020' },
+    services: { oid: '59654f5afc13ae4df4000020' },
     area: 'Zhangdian',
     firstName: 'Stacy',
     lastName: 'Goodluck',
@@ -106,7 +106,7 @@ const workerSeedData = [
   {
     username: 'cfeldkleind',
     password: 'HwXqvaAzZs',
-    services: { $oid: '59654f5afc13ae4df4000021' },
+    services: { oid: '59654f5afc13ae4df4000021' },
     area: 'Triolet',
     firstName: 'Cornell',
     lastName: 'Feldklein',
@@ -114,7 +114,7 @@ const workerSeedData = [
   {
     username: 'astarmoree',
     password: 'dWDFkBOXYkvZ',
-    services: { $oid: '59654f5afc13ae4df4000022' },
+    services: { oid: '59654f5afc13ae4df4000022' },
     area: 'Zhenchuan',
     firstName: 'Archambault',
     lastName: 'Starmore',
@@ -122,7 +122,7 @@ const workerSeedData = [
   {
     username: 'btockf',
     password: 'W5jfTf4atj5',
-    services: { $oid: '59654f5afc13ae4df4000023' },
+    services: { oid: '59654f5afc13ae4df4000023' },
     area: 'Persen',
     firstName: 'Bekki',
     lastName: 'Tock',
@@ -130,7 +130,7 @@ const workerSeedData = [
   {
     username: 'mgantlettg',
     password: '7Xlqs7UC',
-    services: { $oid: '59654f5afc13ae4df4000024' },
+    services: { oid: '59654f5afc13ae4df4000024' },
     area: 'Capellanía',
     firstName: 'Montague',
     lastName: 'Gantlett',
@@ -138,7 +138,7 @@ const workerSeedData = [
   {
     username: 'gredsallh',
     password: 'rfn7OWXv',
-    services: { $oid: '59654f5afc13ae4df4000025' },
+    services: { oid: '59654f5afc13ae4df4000025' },
     area: 'Villasis',
     firstName: 'Gradeigh',
     lastName: 'Redsall',
@@ -146,7 +146,7 @@ const workerSeedData = [
   {
     username: 'owhitrodi',
     password: 'arrkC3lz',
-    services: { $oid: '59654f5afc13ae4df4000026' },
+    services: { oid: '59654f5afc13ae4df4000026' },
     area: 'Sanshandao',
     firstName: 'Orion',
     lastName: 'Whitrod',
@@ -154,7 +154,7 @@ const workerSeedData = [
   {
     username: 'plowreyj',
     password: 'K0czQrPIc',
-    services: { $oid: '59654f5afc13ae4df4000027' },
+    services: { oid: '59654f5afc13ae4df4000027' },
     area: 'Utmānzai',
     firstName: 'Page',
     lastName: 'Lowrey',
