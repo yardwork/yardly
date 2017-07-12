@@ -19,7 +19,8 @@ app.use(bodyParser.json())
 app.use(STATIC_PATH, express.static('dist'))
 app.use(STATIC_PATH, express.static('public'))
 
-app.use('/api', workersRoute, usersRoute)
+
+app.use('/api', bodyParser.json(), usersRoute, workersRoute)
 routing(app)
 
 app.listen(WEB_PORT, () => {

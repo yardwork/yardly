@@ -14,6 +14,7 @@ const router = express.Router()
 router.get(USERS_SHOW, (req, res, next) => {
   const { id } = req.params
 
+
   User
     .findById(id)
     .then((user) => {
@@ -37,7 +38,6 @@ router.get(USERS_INDEX, (req, res, next) => {
 
 router.post(USERS_CREATE, (req, res, next) => {
   const user = new User(req.body)
-
   user
     .save()
     .then((newUser) => {
