@@ -1,4 +1,5 @@
 import express from 'express'
+import bcrypt from 'bcrypt-as-promised'
 
 import Worker from '../db/models/worker'
 
@@ -36,14 +37,18 @@ router.get(WORKERS_INDEX, (req, res, next) => {
 })
 
 router.post(WORKERS_CREATE, (req, res, next) => {
-  const worker = new Worker(req.body)
+  const { username, password, services, area, firstName, lastName } = req.body
 
-  worker
-    .save()
-    .then((newWorker) => {
-      res.status(201).json(newWorker)
+  bcrypt.hash(password)
+    .then((hashedPW) => {
+      const user = new Worker({ username, password: hashedPW, services, area, firstName, lastName })
+      user
+        .save()
+        .then((newUser) => {
+          res.status(201).json(newUser)
+        })
+        .catch(next)
     })
-    .catch(next)
 })
 
 router.delete(WORKERS_DELETE, (req, res, next) => {
