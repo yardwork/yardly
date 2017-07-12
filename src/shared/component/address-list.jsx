@@ -9,7 +9,7 @@ const AddressList = () =>
   </div>)
 
 AddressList.defaultProps = {
-  // message: 'Default message',
+  // message: 'Default message', 
 }
 
 AddressList.propTypes = {

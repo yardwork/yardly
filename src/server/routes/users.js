@@ -9,7 +9,6 @@ import {
   USERS_CREATE,
   USERS_DELETE,
 } from '../../shared/routes'
-
 /* export const USERS_INDEX = '/users'
 export const USERS_SHOW = '/users/:id'
 export const USERS_CREATE = '/users'
