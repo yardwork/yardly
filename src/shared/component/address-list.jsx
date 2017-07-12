@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import AddressEntry from './address-entry'
-
-const AddressList = () =>
+const AddressList = props =>
   (<div>
+    <p>{props}</p>
     <AddressEntry />
   </div>)
 
