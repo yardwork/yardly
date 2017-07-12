@@ -1,4 +1,6 @@
 import express from 'express'
+import mongoose from 'mongoose'
+
 import bcrypt from 'bcrypt-as-promised'
 
 import Worker from '../db/models/worker'
@@ -8,6 +10,7 @@ import {
   WORKERS_SHOW,
   WORKERS_CREATE,
   WORKERS_DELETE,
+  WORKERS_UPDATE,
 } from '../../shared/routes'
 
 const router = express.Router()
@@ -65,6 +68,29 @@ router.delete(WORKERS_DELETE, (req, res, next) => {
           .catch(next)
       }
     })
+})
+
+router.put(WORKERS_UPDATE, (req, res, next) => {
+  const { id } = req.params
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    res.sendStatus(404)
+    return
+  }
+
+  Worker
+    .findByIdAndUpdate(
+      id,
+      { $set: req.body },
+      { new: true },
+    )
+    .then((listing) => {
+      if (listing) {
+        res.json(listing)
+        return
+      }
+      res.sendStatus(404)
+    })
+    .catch(next)
 })
 
 export default router

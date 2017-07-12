@@ -1,4 +1,6 @@
 import express from 'express'
+import mongoose from 'mongoose'
+
 import bcrypt from 'bcrypt-as-promised'
 
 import User from '../db/models/user'
@@ -8,6 +10,7 @@ import {
   USERS_SHOW,
   USERS_CREATE,
   USERS_DELETE,
+  USERS_UPDATE,
 } from '../../shared/routes'
 /* export const USERS_INDEX = '/users'
 export const USERS_SHOW = '/users/:id'
@@ -69,6 +72,29 @@ router.delete(USERS_DELETE, (req, res, next) => {
           .catch(next)
       }
     })
+})
+
+router.put(USERS_UPDATE, (req, res, next) => {
+  const { id } = req.params
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    res.sendStatus(404)
+    return
+  }
+
+  User
+    .findByIdAndUpdate(
+      id,
+      { $set: req.body },
+      { new: true },
+    )
+    .then((listing) => {
+      if (listing) {
+        res.json(listing)
+        return
+      }
+      res.sendStatus(404)
+    })
+    .catch(next)
 })
 
 export default router
