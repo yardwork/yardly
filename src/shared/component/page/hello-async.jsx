@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 
 import HelloAsyncButton from '../../container/hello-async-button'
 import MessageAsync from '../../container/message-async'
+import AddressForm from '../address-form'
 
 const title = 'Async Hello Page'
 
@@ -18,6 +19,7 @@ const HelloAsyncPage = () =>
     <h1>{title}</h1>
     <MessageAsync />
     <HelloAsyncButton />
+    <AddressForm />
     <h1>Hi from HelloAsync Page</h1>
   </div>)
 

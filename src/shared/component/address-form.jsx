@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 const AddressForm = (props) => {
   const { handleSubmit, pristine, reset, submitting } = props
@@ -59,10 +59,13 @@ const AddressForm = (props) => {
 //   address: {},
 // }
 
-// Address.propTypes = {
-//   address: PropTypes.Object.isRequired,
-// }
+AddressForm.propTypes = {
+  // handleSubmit: PropTypes.Function.isRequired,
+  // submitting: PropTypes.Function.isRequired,
+  // pristine: PropTypes.Function.isRequired,
+  // reset: PropTypes.Function.isRequired,
+}
 
-export default AddressForm({
+export default reduxForm({
   form: 'simple', // a unique identifier for this form
-})
+})(AddressForm)

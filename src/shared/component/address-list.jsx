@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import AddressEntry from './address-entry'
+
 const AddressList = props =>
   (<div>
     <p>{props}</p>
@@ -11,7 +13,7 @@ AddressList.defaultProps = {
   // message: 'Default message',
 }
 
-AddressList.propTypes = {
+AddressList.PropTypes = {
   // message: PropTypes.string.isRequired,
 }
 

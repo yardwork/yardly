@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunkMiddleWare from 'redux-thunk'
 import { BrowserRouter } from 'react-router-dom'
+import { reducer as formReducer } from 'redux-form'
 
 import App from '../shared/app'
 import helloReducer from '../shared/reducer/hello'
@@ -19,8 +20,12 @@ const composeEnhancers = (isProd ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMP
 const preloadedState = window.__PRELOADED_STATE__
 
 const store = createStore(combineReducers(
-  { hello: helloReducer }),
-{ hello: preloadedState.hello },
+  { hello: helloReducer,
+    form: formReducer,
+  }),
+{ hello: preloadedState.hello,
+  // form: formReducer,
+},
 composeEnhancers(applyMiddleware(thunkMiddleWare)))
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR)
