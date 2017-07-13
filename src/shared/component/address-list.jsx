@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 
 import AddressEntry from './address-entry'
 
-const AddressList = () =>
+const AddressList = props =>
   (<div>
+    <p>{props}</p>
     <AddressEntry />
   </div>)
 
@@ -12,7 +13,7 @@ AddressList.defaultProps = {
   // message: 'Default message',
 }
 
-AddressList.propTypes = {
+AddressList.PropTypes = {
   // message: PropTypes.string.isRequired,
 }
 

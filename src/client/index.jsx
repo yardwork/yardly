@@ -7,9 +7,11 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunkMiddleWare from 'redux-thunk'
 import { BrowserRouter } from 'react-router-dom'
+import { reducer as formReducer } from 'redux-form'
 
 import App from '../shared/app'
 import helloReducer from '../shared/reducer/hello'
+import addressReducer from '../shared/reducer/address'
 import { APP_CONTAINER_SELECTOR } from '../shared/config'
 import { isProd } from '../shared/util'
 
@@ -19,8 +21,13 @@ const composeEnhancers = (isProd ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMP
 const preloadedState = window.__PRELOADED_STATE__
 
 const store = createStore(combineReducers(
-  { hello: helloReducer }),
-{ hello: preloadedState.hello },
+  { hello: helloReducer,
+    form: formReducer,
+    address: addressReducer,
+  }),
+{ hello: preloadedState.hello,
+  // form: formReducer,
+},
 composeEnhancers(applyMiddleware(thunkMiddleWare)))
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR)
