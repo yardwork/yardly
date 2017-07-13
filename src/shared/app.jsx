@@ -8,6 +8,7 @@ import HelloPage from './component/page/hello'
 // import HelloButton from './container/hello-button'
 import HelloAsyncPage from './component/page/hello-async'
 import NotFoundPage from './component/page/not-found'
+import LoginPage from './component/page/login'
 // import HelloAsyncButton from './container/hello-async-button'
 // import Message from './container/message'
 // import MessageAsync from './container/message-async'
@@ -16,6 +17,7 @@ import {
   HOME_PAGE_ROUTE,
   HELLO_PAGE_ROUTE,
   HELLO_ASYNC_PAGE_ROUTE,
+  LOGIN_PAGE_ROUTE,
 } from './routes'
 
 const App = () =>
@@ -26,6 +28,7 @@ const App = () =>
     <Nav />
     <Switch>
       <Route exact path={HOME_PAGE_ROUTE} render={() => <HomePage />} />
+      <Route exact path={LOGIN_PAGE_ROUTE} render={() => <LoginPage />} />
       <Route path={HELLO_PAGE_ROUTE} render={() => <HelloPage />} />
       <Route path={HELLO_ASYNC_PAGE_ROUTE} render={() => <HelloAsyncPage />} />
       <Route component={NotFoundPage} />
