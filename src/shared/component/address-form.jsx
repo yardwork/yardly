@@ -75,9 +75,9 @@ AddressForm = reduxForm({
   form: 'addressForm', // a unique identifier for this form
 })(AddressForm)
 
-AddressForm = connect(
-  state => ({
-    initialValues: state.account.data,
-  }), null)(AddressForm)
+// AddressForm = connect(
+//   state => ({
+//     initialValues: state.account.data,
+//   }), null)(AddressForm)
 
 export default AddressForm
