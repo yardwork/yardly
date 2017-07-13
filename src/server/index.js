@@ -1,6 +1,7 @@
 import compression from 'compression'
 import express from 'express'
 import bodyParser from 'body-parser'
+import session from 'express-session'
 
 import usersRoute from './routes/users'
 import workersRoute from './routes/workers'
@@ -13,9 +14,14 @@ import db from './db/config'
 
 const app = express()
 
+app.use(session({
+  secret: 'secret',
+  saveUninitialized: true,
+  resave: true,
+}))
+
 app.use(bodyParser.json())
 app.use(compression())
-app.use(bodyParser.json())
 app.use(STATIC_PATH, express.static('dist'))
 app.use(STATIC_PATH, express.static('public'))
 

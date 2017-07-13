@@ -31,6 +31,7 @@ router.get(WORKERS_SHOW, (req, res, next) => {
 })
 
 router.get(WORKERS_INDEX, (req, res, next) => {
+  console.log('session is', req.session)
   Worker
     .find({})
     .then((workers) => {
